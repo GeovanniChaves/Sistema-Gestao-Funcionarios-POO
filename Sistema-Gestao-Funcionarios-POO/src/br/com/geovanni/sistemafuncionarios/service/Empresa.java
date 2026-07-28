@@ -44,10 +44,12 @@ public class Empresa {
 	}
 	
 	public void listarFuncionarios() {
+		System.out.println("Funcionários ativos:");
+		System.out.println("");
 		for (int i = 0; i < funcionarios.size(); i++) {
 		    
 		    Funcionario funcionario = funcionarios.get(i);
-
+		    
 		    funcionario.exibirDados();
 		}
 	}
@@ -78,6 +80,7 @@ public class Empresa {
 		for(int i = 0; i < funcionarios.size(); i++) {
 			Funcionario funcionario = funcionarios.get(i);
 				if(nome.equalsIgnoreCase(funcionario.getNome())) {
+					System.out.println("Funcionário removido:");
 					funcionario.exibirDados();
 					
 					funcionarios.remove(funcionario);
@@ -93,6 +96,22 @@ public class Empresa {
 		}
 	}
 	
+	
+	public void atualizarFuncionario(String nome, String novoCargo, double novoSalario) {
+	    for(int i = 0; i < funcionarios.size(); i++) {
+
+	        Funcionario funcionario = funcionarios.get(i);
+
+	        if(nome.equalsIgnoreCase(funcionario.getNome())) {
+
+	            funcionario.setCargo(novoCargo);
+	            funcionario.setSalario(novoSalario);
+
+	            System.out.println("Funcionário atualizado!");
+	            break;
+	        }
+	    }
+	}
 	
 	
 }

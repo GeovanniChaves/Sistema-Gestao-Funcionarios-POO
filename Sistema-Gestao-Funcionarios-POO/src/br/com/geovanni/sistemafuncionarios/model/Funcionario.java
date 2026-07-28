@@ -82,6 +82,7 @@ public class Funcionario {
 		System.out.println(getCpf());
 		System.out.println(getCargo());
 		System.out.println(getSalario());
+		System.out.println();
 	}
 	
 }
