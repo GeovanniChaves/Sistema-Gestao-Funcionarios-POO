@@ -97,7 +97,11 @@ public class Empresa {
 	}
 	
 	
+	
+	
 	public void atualizarFuncionario(String nome, String novoCargo, double novoSalario) {
+	    boolean atualizado = false;
+
 	    for(int i = 0; i < funcionarios.size(); i++) {
 
 	        Funcionario funcionario = funcionarios.get(i);
@@ -107,9 +111,16 @@ public class Empresa {
 	            funcionario.setCargo(novoCargo);
 	            funcionario.setSalario(novoSalario);
 
-	            System.out.println("Funcionário atualizado!");
+	            System.out.println("Funcionário atualizado com sucesso:");
+	            funcionario.exibirDados();
+
+	            atualizado = true;
 	            break;
 	        }
+	    }
+
+	    if(!atualizado) {
+	        System.out.println("Funcionário não encontrado para atualização.");
 	    }
 	}
 	

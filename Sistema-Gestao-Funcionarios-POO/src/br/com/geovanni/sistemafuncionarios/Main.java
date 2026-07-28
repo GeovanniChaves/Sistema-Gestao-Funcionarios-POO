@@ -21,7 +21,7 @@ public class Main {
 		
 		//Teste de métodos:
 		
-		empresa.atualizarFuncionario("Ana", "Gerente", 7000);
+		//empresa.atualizarFuncionario("Ana", "Gerente", 7000);
 		
 		//empresa.removerFuncionario("Bruno");
 		//empresa.listarFuncionarios();
