@@ -1,5 +1,6 @@
 package br.com.geovanni.sistemafuncionarios.service;
 import java.util.ArrayList;
+
 import br.com.geovanni.sistemafuncionarios.model.Funcionario;
 
 public class Empresa {
@@ -33,6 +34,63 @@ public class Empresa {
 	
 	public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
+	}
+	
+	
+	
+	public void adicionarFuncionario(Funcionario funcionario) {
+		funcionarios.add(funcionario);
+		
+	}
+	
+	public void listarFuncionarios() {
+		for (int i = 0; i < funcionarios.size(); i++) {
+		    
+		    Funcionario funcionario = funcionarios.get(i);
+
+		    funcionario.exibirDados();
+		}
+	}
+		
+	
+	public void buscarFuncionario(String nome) {
+		boolean encontrado = false;
+		
+		for (int i = 0; i < funcionarios.size(); i++) {
+		    Funcionario funcionario = funcionarios.get(i);
+		    	if(nome.equalsIgnoreCase(funcionario.getNome())){
+		    		funcionario.exibirDados();
+		    		
+		    		encontrado = true;
+		    	}	    
+		}
+		
+		if(!encontrado) {
+			System.out.println("Funcionário não encontrado.");
+		}
+		
+	}
+	
+	
+	public void removerFuncionario(String nome) {
+		boolean remover = false;
+		
+		for(int i = 0; i < funcionarios.size(); i++) {
+			Funcionario funcionario = funcionarios.get(i);
+				if(nome.equalsIgnoreCase(funcionario.getNome())) {
+					funcionario.exibirDados();
+					
+					funcionarios.remove(funcionario);
+					
+					remover = true;
+					
+					break;
+				}						
+		}
+		
+		if(!remover) {
+			 System.out.println("Funcionário não encontrado.");
+		}
 	}
 	
 	

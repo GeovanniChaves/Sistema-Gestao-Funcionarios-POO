@@ -76,5 +76,12 @@ public class Funcionario {
 	}
 	
 	
+	public void exibirDados() {
+		System.out.println(getNome());
+		System.out.println(getIdade());
+		System.out.println(getCpf());
+		System.out.println(getCargo());
+		System.out.println(getSalario());
+	}
 	
 }
